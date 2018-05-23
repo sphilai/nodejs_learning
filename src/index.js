@@ -1,8 +1,6 @@
-import http from 'http';
+import express from 'express';
+const app = express()
 
-http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World22\n');
-}).listen(1337, '127.0.0.1');
+app.get('/', (req, res) => res.send('Hello World!'))
 
-console.log('Server running at http://127.0.0.1:1337/');
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
